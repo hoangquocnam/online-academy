@@ -18,7 +18,7 @@
     "build:scss": "npm-run-all -s compile:scss prefix:scss",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build:digitalOcean": "yarn install --production=false && rimraf dist && yarn build && yarn install --production --frozen-lockfile"
+    "build:digitalOcean": "yarn install --production=false && rimraf dist && yarn build:scss && yarn install --production --frozen-lockfile"
   },
   "dependencies": {
     "@google-cloud/storage": "^6.8.0",
