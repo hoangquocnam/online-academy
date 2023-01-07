@@ -9,13 +9,13 @@
   "type": "module",
   "scripts": {
     "dev": "run-p watch:node watch:scss",
-    "start": "run-s build:scss start:node",
+    "start": "node src/index.js",
     "start:node": "cross-env NODE_ENV=production node src/index.js",
     "watch:node": "nodemon src/index.js -e js,hbs",
     "watch:scss": "sass -w public/scss/main.scss public/css/main.css",
     "prefix:scss": "postcss public/css/main.css --replace --use autoprefixer",
     "compile:scss": "sass --style=compressed public/scss/main.scss public/css/main.css",
-    "build:scss": "run-s compile:scss prefix:scss",
+    "build:scss": "npm-run-all -s compile:scss prefix:scss",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
